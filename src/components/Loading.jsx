@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Contain = styled.div`
+export const Loading = styled.div`
 	background-image: url(${(props) => props.url});
 	background-repeat: no-repeat;
 	background-position: center;

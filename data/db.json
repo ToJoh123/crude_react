@@ -8,13 +8,6 @@
       "price": 3
     },
     {
-      "id": 2,
-      "name": "Blondie",
-      "style": "blonde",
-      "abv": 6.5,
-      "price": 2.3
-    },
-    {
       "id": 3,
       "name": "Saisons in the Sun",
       "style": "saison",
@@ -57,11 +50,36 @@
       "price": 4.2
     },
     {
-      "id": 10,
-      "name": "Not Barely Wine",
-      "style": "barley wine",
-      "abv": 12.2,
-      "price": 8.2
+      "name": "Stockholm brewing X APEX",
+      "style": "bitter",
+      "abv": "4",
+      "price": "56",
+      "imageUrl": "",
+      "id": 10
+    },
+    {
+      "name": "asd",
+      "style": "bitter",
+      "abv": "",
+      "price": "",
+      "imageUrl": "",
+      "id": 11
+    },
+    {
+      "name": "asd",
+      "style": "bitter",
+      "abv": "",
+      "price": "",
+      "imageUrl": "",
+      "id": 12
+    },
+    {
+      "name": "Heineken",
+      "style": "saison",
+      "abv": "2",
+      "price": "12.5",
+      "imageUrl": "https://sb-product-media-prod.azureedge.net/productimages/24452335/24452335_400.png?q=75&w=879",
+      "id": 13
     }
   ],
   "colors": {
@@ -80,6 +98,8 @@
       "stout",
       "porter",
       "barley wine"
-    ]
+    ],
+    "colorStyle": "neww",
+    "colorType": "medium"
   }
 }

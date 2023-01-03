@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
+
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 const PAGES = [ 'Home', 'Products' ];
 
@@ -23,7 +23,7 @@ function DrawerComp() {
 					))}
 				</List>
 			</Drawer>
-			<IconButton sx={{ color: 'white' }} marginLeft="auto" onClick={() => setOpenDrawer(!openDrawer)}>
+			<IconButton sx={{ color: 'white', marginLeft: 'auto' }} onClick={() => setOpenDrawer(!openDrawer)}>
 				<MenuIcon />
 			</IconButton>
 		</React.Fragment>

@@ -22,7 +22,7 @@ import {
 } from '@mui/material';
 
 import orderBy from 'lodash/orderBy';
-import { Contain } from '../components/Contain';
+import { Loading } from '../components/Loading';
 import ItemRow from '../components/ItemRow';
 
 export default function Products() {
@@ -58,10 +58,10 @@ export default function Products() {
 	const [ style, setStyle ] = useState('');
 	const [ abv, setAbv ] = useState('');
 	const [ price, setPrice ] = useState('');
-
+	const [ imageUrl, setImageUrl ] = useState('');
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const newProduct = { name, style, abv, price };
+		const newProduct = { name, style, abv, price, imageUrl };
 		console.log(newProduct);
 		const post = await fetch('http://localhost:3001/products', {
 			method: 'POST',
@@ -72,7 +72,7 @@ export default function Products() {
 		});
 		if (post.ok) {
 			console.log('Product added successfully');
-			window.location.reload();
+			// window.location.reload();
 		} else {
 			console.log('Product not added');
 		}
@@ -97,14 +97,14 @@ export default function Products() {
 	return (
 		<div className="App">
 			{isLoading ? (
-				<Contain
+				<Loading
 					url={
 						'https://cdn.discordapp.com/attachments/1020970322746421338/1058865325057253457/Tom_Johansson_cat_loading_webdesign_7e39efc6-87ab-471c-9b60-92dead63271e.png'
 					}>
 					<Typography variant="h2" sx={{ paddingTop: '10rem', color: 'whitesmoke' }}>
 						Sorry i am loading...have you tried to sit on the keyboard?
 					</Typography>
-				</Contain>
+				</Loading>
 			) : (
 				<React.Fragment>
 					<Container sx={{ paddingTop: '5rem' }}>
@@ -204,7 +204,7 @@ export default function Products() {
 								</Grid>
 								<Grid item xs={2}>
 									<FormLabel>Enter Style</FormLabel>
-									<Select fullWidth value={sortKey} onChange={(e) => setStyle(e.target.value)}>
+									<Select fullWidth value={style} onChange={(e) => setStyle(e.target.value)}>
 										{/* this items should be replaced by a map function */}
 										<MenuItem value="weiss">weiss</MenuItem>
 										<MenuItem value="blonde">blonde</MenuItem>
@@ -225,6 +225,10 @@ export default function Products() {
 								<Grid item xs={2}>
 									<FormLabel>Enter Price</FormLabel>
 									<TextField type="number" onChange={(e) => setPrice(e.target.value)} />
+								</Grid>
+								<Grid item xs={2}>
+									<FormLabel>image url</FormLabel>
+									<TextField type="url" onChange={(e) => setImageUrl(e.target.value)} />
 								</Grid>
 							</Grid>
 							<Button fullWidth variant="contained" color="primary" onClick={handleSubmit}>

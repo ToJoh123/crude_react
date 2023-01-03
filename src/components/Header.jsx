@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Button, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme, Button } from '@mui/material';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import DrawerComp from './DrawerComp';
 import { Link } from 'react-router-dom';
@@ -33,21 +33,21 @@ const Header = () => {
 								))}
 							</Tabs>
 							<Button
-								sx={{ marginLeft: 'auto' }}
+								style={{ marginLeft: 'auto' }}
 								variant="contained"
 								color="secondary"
 								component={Link}
 								to={'/login'}
-								disabled="true">
+								disabled={true}>
 								Login
 							</Button>
 							<Button
-								sx={{ marginLeft: '10px' }}
+								style={{ marginLeft: '10px' }}
 								variant="contained"
 								color="secondary"
 								component={Link}
 								to={'/register'}
-								disabled="true">
+								disabled={true}>
 								Register
 							</Button>
 						</React.Fragment>
